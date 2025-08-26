@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StatisticsTitle from 'components/Statistics/StatisticsTitle';
 import {
   Container,
@@ -22,3 +23,12 @@ export default function Statistics({ title, stats }) {
     </Container>
   );
 }
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
+};
